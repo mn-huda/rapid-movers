@@ -1,0 +1,39 @@
+---
+import type { Lang } from '@/definitions.ts'
+
+import '@/styles/globals.css'
+
+const { lang } = Astro.props as { lang: Lang }
+---
+
+<html lang={lang}>
+  <head>
+    <meta charset='utf-8' />
+    <link
+      rel='icon'
+      type='image/svg+xml'
+      href='/favicon.svg'
+    />
+    <meta
+      name='viewport'
+      content='width=device-width'
+    />
+    <link
+      rel='preconnect'
+      href='https://fonts.googleapis.com'
+    />
+    <link
+      rel='preconnect'
+      href='https://fonts.gstatic.com'
+      crossorigin
+    />
+    <link
+      href='https://fonts.googleapis.com/css2?family=Albert+Sans:wght@200;400;600&family=Noto+Color+Emoji&display=swap'
+      rel='stylesheet'
+    />
+    <title>Rapid Movers</title>
+  </head>
+  <body>
+    <slot />
+  </body>
+</html>
