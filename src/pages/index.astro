@@ -1,10 +1,7 @@
 ---
-import RootLayout from '@/layouts/astro/RootLayout.astro'
-import Home from '@/components/pages/Home.tsx'
-
-const lang = 'en'
+import ClientSideLayout from '../layouts/ClientSideLayout.astro'
 ---
 
-<RootLayout lang={lang}>
-  <Home lang={lang} />
-</RootLayout>
+<ClientSideLayout lang='en'>
+  <p>Welcome to Rapid Movers!!!</p>
+</ClientSideLayout>

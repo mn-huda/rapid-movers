@@ -1,0 +1,81 @@
+---
+import EnglishLogoText from './EnglishLogoText.astro'
+import BanglaLogoText from './BanglaLogoText.astro'
+import NavLinks from './NavLinks.astro'
+import Button from '../react/Button/Button'
+
+const { lang } = Astro.props
+---
+
+<header>
+  <div>
+    <a href={lang === 'bn' ? 'bn' : '/'}>
+      <div id='logo'>
+        <img
+          src='logo.webp'
+          alt='Rapid Movers Logo'
+          width='72'
+          height='72'
+        />
+        <span id='logo-text'>
+          {
+            lang === 'bn' ? (
+              <BanglaLogoText />
+            ) : (
+              <EnglishLogoText />
+            )
+          }
+        </span>
+      </div>
+    </a>
+    <NavLinks lang={lang} />
+    <Button
+      text={lang === 'bn'
+        ? 'সেবা পেতে অনুরোধ'
+        : 'Request Service'}
+    />
+  </div>
+</header>
+
+<style>
+  header {
+    padding: 0.5rem;
+  }
+
+  header > div {
+    align-items: center;
+    display: flex;
+    height: 4rem;
+    justify-content: space-between;
+    margin-inline: auto;
+    max-width: 96rem;
+    overflow: hidden;
+  }
+
+  #logo {
+    align-items: center;
+    color: var(--color-p);
+    display: flex;
+    font-size: 2rem;
+    font-style: italic;
+    font-weight: 600;
+    gap: 0.5rem;
+    justify-content: start;
+  }
+
+  #logo img {
+    height: 6rem;
+    margin-block-end: 1rem;
+    width: 6rem;
+  }
+
+  #logo-text {
+    display: none;
+  }
+
+  @media screen and (min-width: 35rem) {
+    #logo-text {
+      display: unset;
+    }
+  }
+</style>
