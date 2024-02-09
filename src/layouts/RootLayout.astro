@@ -62,6 +62,7 @@ const title = pageTitle || pageTitles[lang]
     color: inherit;
     font-size: inherit;
     font-weight: inherit;
+    line-height: 1.5em;
     margin: 0;
     outline: none;
     padding: 0;
@@ -74,6 +75,18 @@ const title = pageTitle || pageTitles[lang]
     color: var(--color-f);
     font-size: 135%;
     font-weight: 400;
+    min-width: 20rem;
+  }
+
+  h1 {
+    font-size: 6rem;
+    font-weight: 600;
+    line-height: 1.25em;
+  }
+
+  h2 {
+    font-size: 1.62rem;
+    color: gray;
   }
 
   .thin {
@@ -82,5 +95,9 @@ const title = pageTitle || pageTitles[lang]
 
   .bold {
     font-weight: 600;
+  }
+
+  .color-p {
+    color: var(--color-p);
   }
 </style>

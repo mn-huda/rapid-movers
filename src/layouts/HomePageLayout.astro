@@ -1,0 +1,43 @@
+---
+import ClientSideLayout from './ClientSideLayout.astro'
+import EnglishHero from '../components/astro/EnglishHero.astro'
+import BanglaHero from '../components/astro/BanglaHero.astro'
+
+const { lang } = Astro.props
+
+const Hero = lang === 'bn' ? BanglaHero : EnglishHero
+---
+
+<ClientSideLayout lang={lang}>
+  <section id='hero'>
+    <Hero />
+    <div id='hero-img'></div>
+  </section>
+</ClientSideLayout>
+
+<style>
+  #hero {
+    min-height: 80vb;
+    max-height: 22rem;
+  }
+
+  #hero-img {
+    background-image: url('hero.jpg');
+    background-size: cover;
+    border-radius: 1.62rem;
+    filter: saturate(50%) grayscale(60%);
+  }
+
+  @media screen and (min-width: 64rem) {
+    #hero {
+      align-items: center;
+      display: grid;
+      gap: 2rem;
+      grid-template-columns: 1fr 1fr;
+    }
+
+    #hero-img {
+      height: 100%;
+    }
+  }
+</style>

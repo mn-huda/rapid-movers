@@ -29,11 +29,13 @@ const { lang } = Astro.props
       </div>
     </a>
     <NavLinks lang={lang} />
-    <Button
-      text={lang === 'bn'
-        ? 'সেবা পেতে অনুরোধ'
-        : 'Request Service'}
-    />
+    <Button>
+      {
+        lang === 'bn'
+          ? 'সেবা পেতে অনুরোধ'
+          : 'Request Service'
+      }
+    </Button>
   </div>
 </header>
 

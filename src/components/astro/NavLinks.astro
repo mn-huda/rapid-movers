@@ -61,7 +61,7 @@ const texts = navLinksText[lang]
     line-height: 3rem;
     height: 2.8rem;
     transition: filter 250ms ease-in;
-    width: 8rem;
+    width: 6rem;
   }
 
   nav > a:hover,
@@ -75,6 +75,12 @@ const texts = navLinksText[lang]
 
   nav > a:not(:last-child) {
     border-inline-end: 0.1rem solid var(--color-b);
+  }
+
+  @media screen and (min-width: 30rem) {
+    nav > a {
+      width: 8rem;
+    }
   }
 
   @media screen and (min-width: 68rem) {
