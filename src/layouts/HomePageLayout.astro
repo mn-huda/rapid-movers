@@ -2,6 +2,7 @@
 import ClientSideLayout from './ClientSideLayout.astro'
 import EnglishHero from '../components/astro/EnglishHero.astro'
 import BanglaHero from '../components/astro/BanglaHero.astro'
+import CTA from '../components/astro/CTA.astro'
 
 const { lang } = Astro.props
 
@@ -13,9 +14,115 @@ const Hero = lang === 'bn' ? BanglaHero : EnglishHero
     <Hero />
     <div id='hero-img'></div>
   </section>
+
+  <section class='non-hero'>
+    <h2 class='center'>
+      {lang === 'bn' ? 'আমাদের সেবাসমূহ' : 'Our Services'}
+    </h2>
+    <div class='services'>
+      <div class='service'>
+        <div class='service-img'></div>
+        <h3>
+          {
+            lang === 'bn'
+              ? 'বাসা বদল ও পরিবহণ'
+              : 'Home shifting and transport'
+          }
+        </h3>
+        <p>
+          {
+            lang === 'bn'
+              ? 'আমরা বাসাবাড়ি ও অফিস প্যাকিং ও শিফটিং করি। মালামাল পরিবহণের জন্য আমরা ট্রাকও দিতে পারি।'
+              : 'We pack and shift houses and offices. We can also provide trucks for items transportation.'
+          }
+        </p>
+      </div>
+      <div class='service'>
+        <div class='service-img'></div>
+        <h3>
+          {
+            lang === 'bn'
+              ? 'ইলেক্ট্রিক্যাল ও প্লাম্বিং মেরামত'
+              : 'Electrical and plubming repair'
+          }
+        </h3>
+        <p>
+          {
+            lang === 'bn'
+              ? 'আপনার ইলেকট্রিক্যাল অ্যাপ্লায়েন্স এবং প্লাম্বিং মেরামতের জন্য দক্ষ কর্মী রয়েছে।'
+              : 'We have expert handyman to repair your electrical appliances and plumbing.'
+          }
+        </p>
+      </div>
+      <div class='service'>
+        <div class='service-img'></div>
+        <h3>
+          {
+            lang === 'bn'
+              ? 'বাসা পরিষ্কার ও ব্যবস্থাপনা'
+              : 'Home cleaning and maintenance'
+          }
+        </h3>
+        <p>
+          {
+            lang === 'bn'
+              ? 'পোকামাকড় দমন বা বাসা পরিষ্কার, যাই হোক না কেনো, আমাদের কর্মীরা সবথেকে দক্ষ।'
+              : `Whether it's pest cleaning or house cleaning, our experts are the best.`
+          }
+        </p>
+      </div>
+    </div>
+    <div class='cta'>
+      <CTA lang={lang} />
+    </div>
+  </section>
+
+  <section id='calculate'></section>
 </ClientSideLayout>
 
 <style>
+  .non-hero {
+    padding-block: 4rem;
+  }
+
+  .services {
+    display: grid;
+    gap: 1.62rem;
+    max-width: 100%;
+  }
+
+  .service {
+    display: flex;
+    flex-direction: column;
+    gap: 0.62rem;
+  }
+
+  .service-img {
+    background-size: cover;
+    background-position: center;
+    border-radius: 2rem;
+    height: 32rem;
+    margin-block-end: 1rem;
+  }
+
+  .service:nth-child(1) > .service-img {
+    background-image: url('home-shifting.jpg');
+  }
+
+  .service:nth-child(2) > .service-img {
+    background-image: url('reparing.jpg');
+  }
+
+  .service:nth-child(3) > .service-img {
+    background-image: url('maintenance.jpg');
+  }
+
+  .cta {
+    display: flex;
+    justify-content: center;
+    margin-block-start: 4rem;
+  }
+
   #hero {
     min-height: 80vb;
     max-height: 22rem;
@@ -26,6 +133,14 @@ const Hero = lang === 'bn' ? BanglaHero : EnglishHero
     background-size: cover;
     border-radius: 1.62rem;
     filter: saturate(50%) grayscale(60%);
+    min-height: 12rem;
+    z-index: -99999;
+  }
+
+  @media screen and (min-width: 48rem) {
+    .services {
+      grid-template-columns: repeat(3, 1fr);
+    }
   }
 
   @media screen and (min-width: 64rem) {
