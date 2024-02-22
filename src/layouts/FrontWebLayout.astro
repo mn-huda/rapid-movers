@@ -1,11 +1,17 @@
 ---
-import RootLayout from './RootLayout.astro'
+// local imports
+import FrontWebHeader from '@/components/react/FrontWebHeader'
+import FrontWebFooter from '@/components/react/FrontWebFooter'
+import RootLayout from '@/layouts/RootLayout.astro'
+
+// props
+const { lang } = Astro.props as { lang: 'bn' | 'en' }
 ---
 
-<RootLayout>
-  <header></header>
-  <main>
+<RootLayout lang={lang}>
+  <FrontWebHeader lang={lang} />
+  <main class='max-w-screen-2xl me-auto ms-auto'>
     <slot />
   </main>
-  <footer></footer>
+  <FrontWebFooter lang={lang} />
 </RootLayout>

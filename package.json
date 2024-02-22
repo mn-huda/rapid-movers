@@ -1,5 +1,5 @@
 {
-  "name": "",
+  "name": "rapid-movers",
   "type": "module",
   "version": "0.0.1",
   "scripts": {
@@ -10,8 +10,25 @@
     "astro": "astro"
   },
   "dependencies": {
-    "astro": "^4.4.2",
     "@astrojs/check": "^0.5.5",
+    "@astrojs/react": "^3.0.10",
+    "@astrojs/tailwind": "^5.1.0",
+    "@radix-ui/react-slot": "^1.0.2",
+    "@types/react": "^18.2.57",
+    "@types/react-dom": "^18.2.19",
+    "astro": "^4.4.2",
+    "class-variance-authority": "^0.7.0",
+    "clsx": "^2.1.0",
+    "localforage": "^1.10.0",
+    "lucide-react": "^0.336.0",
+    "match-sorter": "^6.3.4",
+    "react": "^18.2.0",
+    "react-dom": "^18.2.0",
+    "react-router-dom": "^6.22.1",
+    "sort-by": "^1.2.0",
+    "tailwind-merge": "^2.2.1",
+    "tailwindcss": "^3.4.1",
+    "tailwindcss-animate": "^1.0.7",
     "typescript": "^5.3.3"
   }
 }

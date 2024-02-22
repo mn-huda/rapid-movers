@@ -1,5 +1,9 @@
 ---
-const { lang } = Astro.props as { lang: 'bn' | 'en' }
+// local imports
+import '@/styles/globals.css'
+
+// props
+const { lang } = Astro.props as { lang: 'en' | 'bn' }
 ---
 
 <html lang={lang}>
@@ -14,9 +18,22 @@ const { lang } = Astro.props as { lang: 'bn' | 'en' }
       name='viewport'
       content='width=device-width'
     />
+    <link
+      rel='preconnect'
+      href='https://fonts.googleapis.com'
+    />
+    <link
+      rel='preconnect'
+      href='https://fonts.gstatic.com'
+      crossorigin
+    />
+    <link
+      href='https://fonts.googleapis.com/css2?family=Anek+Bangla:wght@100..800&family=Bebas+Neue&family=Noto+Color+Emoji&display=swap'
+      rel='stylesheet'
+    />
     <title>Rapid Movers</title>
   </head>
-  <body>
+  <body class='bg-background font-body font-normal text-xl'>
     <slot />
   </body>
 </html>
