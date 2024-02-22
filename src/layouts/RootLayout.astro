@@ -1,15 +1,5 @@
 ---
-const { lang, pageTitle } = Astro.props as {
-  lang: keyof typeof pageTitles
-  pageTitle: string
-}
-
-export const pageTitles = {
-  bn: 'র‍্যাপিড মুভারস',
-  en: 'Rapid Movers'
-}
-
-const title = pageTitle || pageTitles[lang]
+const { lang } = Astro.props as { lang: 'bn' | 'en' }
 ---
 
 <html lang={lang}>
@@ -17,96 +7,16 @@ const title = pageTitle || pageTitles[lang]
     <meta charset='utf-8' />
     <link
       rel='icon'
-      type='image/png'
-      href='/icon.png'
+      type='image/svg+xml'
+      href='/favicon.svg'
     />
     <meta
       name='viewport'
       content='width=device-width'
     />
-    <link
-      rel='preconnect'
-      href='https://fonts.googleapis.com'
-    />
-    <link
-      rel='preconnect'
-      href='https://fonts.gstatic.com'
-      crossorigin
-    />
-    <link
-      href={lang === 'bn'
-        ? 'https://fonts.googleapis.com/css2?family=Albert+Sans:wght@200;400;600&family=Noto+Sans+Bengali:wght@200;400;600&family=Noto+Color+Emoji&display=swap'
-        : 'https://fonts.googleapis.com/css2?family=Albert+Sans:wght@200;400;600&family=Noto+Color+Emoji&display=swap'}
-      rel='stylesheet'
-    />
-    <title>{title}</title>
+    <title>Rapid Movers</title>
   </head>
   <body>
     <slot />
   </body>
 </html>
-
-<style is:global>
-  :root {
-    --color-b: #e9eae2;
-    --color-f: #201f40;
-    --color-p: #0d74a3;
-    --color-s: #f0bc6d;
-
-    box-sizing: border-box;
-  }
-
-  * {
-    border: none;
-    box-sizing: inherit;
-    color: inherit;
-    font-size: inherit;
-    font-weight: inherit;
-    line-height: 1.5em;
-    margin: 0;
-    outline: none;
-    padding: 0;
-    text-align: inherit;
-    text-decoration: none;
-  }
-
-  body {
-    background-color: var(--color-b);
-    color: var(--color-f);
-    font-size: 135%;
-    font-weight: 400;
-    min-width: 20rem;
-  }
-
-  h1 {
-    font-size: 6rem;
-    font-weight: 600;
-    line-height: 1.25em;
-  }
-
-  h2 {
-    font-size: 4rem;
-    font-weight: 600;
-  }
-
-  h3 {
-    font-size: 1.62rem;
-    font-weight: 600;
-  }
-
-  .thin {
-    font-weight: 200;
-  }
-
-  .bold {
-    font-weight: 600;
-  }
-
-  .center {
-    text-align: center;
-  }
-
-  .color-p {
-    color: var(--color-p);
-  }
-</style>
