@@ -1,0 +1,231 @@
+---
+// local imports
+import WhatsAppCall from '@/components/astro/WhatsAppCall.astro'
+import Logo from '@/components/react/Logo'
+import ThemeColorToggle from '@/components/react/ThemeColorToggle'
+import { Button } from '@/components/ui/button'
+
+// props
+const { lang } = Astro.props as { lang: 'en' | 'bn' }
+---
+
+<!-- Front Website Header -->
+<header class='border-b-2 p-2'>
+  <div
+    class='flex items-center justify-between max-w-screen-2xl me-auto ms-auto'
+  >
+    <a href='/'>
+      <div class='flex items-center gap-2'>
+        <Logo side={5} />
+        <p
+          class={`dark:text-foreground ${
+            lang === 'en' ? 'font-display ' : ''
+          }hidden s:block text-primary text-3xl`}
+        >
+          Rapid Movers
+        </p>
+      </div>
+    </a>
+    <section class='flex gap-4 items-center'>
+      <nav class='gap-4 hidden md:flex'>
+        <a
+          class='hidden lg:block'
+          href='/about'
+        >
+          <Button
+            className='dark:hover:text-foreground hover:text-background'
+            variant='outline'
+          >
+            About
+          </Button>
+        </a>
+        <div class='group relative'>
+          <a href='/services'>
+            <Button
+              className='dark:hover:text-foreground hover:text-background'
+              variant='outline'
+            >
+              Services
+            </Button>
+          </a>
+          <div
+            class='absolute hidden group-hover:block left-1/2 pt-8 -translate-x-1/2 w-[36rem]'
+          >
+            <div
+              class='bg-background dark:bg-muted border gap-4 group-hover:grid grid-cols-2 p-4 rounded-md w-full'
+            >
+              <a href='/shifting'>
+                <div
+                  class='dark:hover:bg-accent flex hover:bg-primary-foreground items-start gap-4 p-2 rounded-md'
+                >
+                  <img
+                    class='dark:hidden h-12 w-12'
+                    width={48}
+                    height={48}
+                    src='/sofa-light.gif'
+                    alt='home shifting symbol'
+                  />
+                  <img
+                    class='dark:block h-12 hidden w-12'
+                    width={48}
+                    height={48}
+                    src='/sofa-dark.gif'
+                    alt='home shifting symbol'
+                  />
+                  <div class='pt-1'>
+                    <p class='font-bold text-2xl'>Shifting</p>
+                    <p class='text-base'>
+                      We pack and shift office/home items.
+                    </p>
+                  </div>
+                </div>
+              </a>
+              <a href='/transport'>
+                <div
+                  class='dark:hover:bg-accent flex hover:bg-primary-foreground items-start gap-4 p-2 rounded-md'
+                >
+                  <img
+                    class='dark:hidden h-12 w-12'
+                    width={48}
+                    height={48}
+                    src='/truck-light.gif'
+                    alt='home shifting symbol'
+                  />
+                  <img
+                    class='dark:block h-12 hidden w-12'
+                    width={48}
+                    height={48}
+                    src='/truck-dark.gif'
+                    alt='home shifting symbol'
+                  />
+                  <div class='pt-1'>
+                    <p class='font-bold text-2xl'>Transport</p>
+                    <p class='text-base'>We provide trucks to move items.</p>
+                  </div>
+                </div>
+              </a>
+              <a href='/cleaning'>
+                <div
+                  class='dark:hover:bg-accent flex hover:bg-primary-foreground items-start gap-4 p-2 rounded-md'
+                >
+                  <img
+                    class='dark:hidden h-12 w-12'
+                    width={48}
+                    height={48}
+                    src='/sponge-light.gif'
+                    alt='home shifting symbol'
+                  />
+                  <img
+                    class='dark:block h-12 hidden w-12'
+                    width={48}
+                    height={48}
+                    src='/sponge-dark.gif'
+                    alt='home shifting symbol'
+                  />
+                  <div class='pt-1'>
+                    <p class='font-bold text-2xl'>Cleaning</p>
+                    <p class='text-base'>
+                      We provide home/office cleaning services.
+                    </p>
+                  </div>
+                </div>
+              </a>
+              <a href='/pest-control'>
+                <div
+                  class='dark:hover:bg-accent flex hover:bg-primary-foreground items-start gap-4 p-2 rounded-md'
+                >
+                  <img
+                    class='dark:hidden h-12 w-12'
+                    width={48}
+                    height={48}
+                    src='/window-light.gif'
+                    alt='home shifting symbol'
+                  />
+                  <img
+                    class='dark:block h-12 hidden w-12'
+                    width={48}
+                    height={48}
+                    src='/window-dark.gif'
+                    alt='home shifting symbol'
+                  />
+                  <div class='pt-1'>
+                    <p class='font-bold text-2xl'>Pest Control</p>
+                    <p class='text-base'>
+                      We clean insects and pests from home/office.
+                    </p>
+                  </div>
+                </div>
+              </a>
+              <a href='/electrical'>
+                <div
+                  class='dark:hover:bg-accent flex hover:bg-primary-foreground items-start gap-4 p-2 rounded-md'
+                >
+                  <img
+                    class='dark:hidden h-12 w-12'
+                    width={48}
+                    height={48}
+                    src='/chandelier-light.gif'
+                    alt='home shifting symbol'
+                  />
+                  <img
+                    class='dark:block h-12 hidden w-12'
+                    width={48}
+                    height={48}
+                    src='/chandelier-dark.gif'
+                    alt='home shifting symbol'
+                  />
+                  <div class='pt-1'>
+                    <p class='font-bold text-2xl'>Electrical</p>
+                    <p class='text-base'>
+                      Our experts install and repair appliances.
+                    </p>
+                  </div>
+                </div>
+              </a>
+              <a href='plumbing'>
+                <div
+                  class='dark:hover:bg-accent flex hover:bg-primary-foreground items-start gap-4 p-2 rounded-md'
+                >
+                  <img
+                    class='dark:hidden h-12 w-12'
+                    width={48}
+                    height={48}
+                    src='/sink-light.gif'
+                    alt='home shifting symbol'
+                  />
+                  <img
+                    class='dark:block h-12 hidden w-12'
+                    width={48}
+                    height={48}
+                    src='/sink-dark.gif'
+                    alt='home shifting symbol'
+                  />
+                  <div class='pt-1'>
+                    <p class='font-bold text-2xl'>Plumbing</p>
+                    <p class='text-base'>
+                      Our expert can repair any plubming issue.
+                    </p>
+                  </div>
+                </div>
+              </a>
+            </div>
+          </div>
+        </div>
+        <a
+          class='hidden lg:block'
+          href='/contact'
+        >
+          <Button
+            className='dark:hover:text-foreground hover:text-background'
+            variant='outline'
+          >
+            Contact
+          </Button>
+        </a>
+      </nav>
+      <Button className='hidden sm:flex'>Request Service</Button>
+      <WhatsAppCall side={2} />
+      <ThemeColorToggle client:only />
+    </section>
+  </div>
+</header>

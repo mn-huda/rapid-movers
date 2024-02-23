@@ -66,6 +66,11 @@ module.exports = {
           from: { height: 'var(--radix-accordion-content-height)' },
           to: { height: '0' }
         }
+      },
+      screens: {
+        '3s': '320px',
+        '2s': '480px',
+        s: '576px'
       }
     },
     fontFamily: {
