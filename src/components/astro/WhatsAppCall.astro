@@ -9,6 +9,7 @@ const { side } = Astro.props as { side: number }
 
 <!-- Call on WhatsApp -->
 <a
+  class='hidden 2s:block z-50'
   href={`https://wa.me/${import.meta.env.WHATSAPP_NUMBER}`}
   target='_blank'
 >

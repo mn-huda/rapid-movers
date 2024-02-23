@@ -12,7 +12,7 @@ import {
 } from '@/components/ui/dropdown-menu'
 
 // theme color toggle
-export default function ThemeColorToggle() {
+export default function ThemeColorToggle({ lang }: { lang: 'en' | 'bn' }) {
   const [theme, setThemeState] = useState<'theme-light' | 'dark' | 'system'>(
     'theme-light'
   )
@@ -32,7 +32,10 @@ export default function ThemeColorToggle() {
 
   return (
     <DropdownMenu>
-      <DropdownMenuTrigger asChild>
+      <DropdownMenuTrigger
+        className='z-50'
+        asChild
+      >
         <Button
           variant='outline'
           size='icon'

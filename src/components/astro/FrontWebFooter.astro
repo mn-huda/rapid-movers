@@ -7,7 +7,7 @@ const { lang } = Astro.props as { lang: 'en' | 'bn' }
 ---
 
 <!-- Front Website Footer -->
-<footer class='bg-foreground pe-2 ps-2 py-8'>
+<footer class='bg-foreground dark:bg-background dark:border-t-2 pe-2 ps-2 py-8'>
   <div class='max-w-screen-2xl me-auto ms-auto'>
     <a
       class='flex flex-col gap-4 items-center sm:w-min'
@@ -15,7 +15,7 @@ const { lang } = Astro.props as { lang: 'en' | 'bn' }
     >
       <Logo side={10} />
       <p
-        class={`${
+        class={`dark:text-foreground ${
           lang === 'en' ? 'font-display ' : ''
         }text-background text-center text-4xl`}
       >

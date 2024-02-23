@@ -2,6 +2,7 @@
 // local imports
 import WhatsAppCall from '@/components/astro/WhatsAppCall.astro'
 import Logo from '@/components/react/Logo'
+import MobileMenu from '@/components/react/MobileMenu'
 import ThemeColorToggle from '@/components/react/ThemeColorToggle'
 import { Button } from '@/components/ui/button'
 
@@ -27,11 +28,8 @@ const { lang } = Astro.props as { lang: 'en' | 'bn' }
       </div>
     </a>
     <section class='flex gap-4 items-center'>
-      <nav class='gap-4 hidden md:flex'>
-        <a
-          class='hidden lg:block'
-          href='/about'
-        >
+      <nav class='gap-4 hidden lg:flex'>
+        <a href='/about'>
           <Button
             className='dark:hover:text-foreground hover:text-background'
             variant='outline'
@@ -211,10 +209,7 @@ const { lang } = Astro.props as { lang: 'en' | 'bn' }
             </div>
           </div>
         </div>
-        <a
-          class='hidden lg:block'
-          href='/contact'
-        >
+        <a href='/contact'>
           <Button
             className='dark:hover:text-foreground hover:text-background'
             variant='outline'
@@ -223,9 +218,16 @@ const { lang } = Astro.props as { lang: 'en' | 'bn' }
           </Button>
         </a>
       </nav>
-      <Button className='hidden sm:flex'>Request Service</Button>
+      <Button className='hidden md:flex'>Request Service</Button>
       <WhatsAppCall side={2} />
-      <ThemeColorToggle client:only />
+      <ThemeColorToggle
+        client:only
+        lang={lang}
+      />
+      <MobileMenu
+        client:only
+        lang={lang}
+      />
     </section>
   </div>
 </header>
